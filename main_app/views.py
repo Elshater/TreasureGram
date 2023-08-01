@@ -11,4 +11,23 @@ context = {'treausre_name': name,
 
 
 def index(request):
-    return render(request, 'index.html', context)
+    return render(request, 'index.html', {'treasures': treasures})
+
+
+class Treasure:
+    def __init__(self, name, value, material, location):
+        self.name = name
+        self.value = value
+        self.material = material
+        self.location = location
+
+
+treasures = [
+    Treasure("Gold", 5000, 'gold', 'gold'),
+    Treasure("cofee", 1000, 'cofee', 'cofee'),
+    Treasure("tea", 200, 'tea', 'tea'),
+    Treasure("milk", 400, 'milk', 'milk'),
+    Treasure("cheoklate", 0, 'cheoklate', 'cheoklate'),
+
+
+]
